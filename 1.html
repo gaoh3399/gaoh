@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式绑定</title>
+    <script src="node_modules/_vue@2.6.12@vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-text="name"></p>
+    <p>{{numberN}}</p>
+    <button @click="changea">增加</button>
+    <ul>
+        <li v-for="(v,i) in arrN" v-text="v"></li>
+    </ul>
+    <p>{{ccObj.age}}</p>
+    <input type="text" v-model="numberN">
+</div>
+</body>
+<script src="vue-router.js"></script>
+<script type="text/javascript">
+    var ve = new Vue({
+        el:"#app",
+        data:{
+            arrN:["啊啊","上升","滴滴","方法","公共","换行","聚焦"],
+            numberN:1,
+            name:"明夜",
+            ccObj:{
+                data:"飞天002",
+                age:23
+            }
+        },
+        methods:{
+            changea(){
+                this.numberN++;
+            }
+        }
+    });
+</script>
+</html>
